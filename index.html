@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descobre Moçambique</title>
+<meta name="description" content="Descobre praias, alojamentos, restaurantes, parques e roteiros em Moçambique.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&display=swap">
+<style>
+:root{--bg:#fbf8f1;--fg:#12313f;--mut:#566f7b;--card:#fff;--pri:#0b5d7a;--acc:#14b8a6;--sand:#f1e6cf;--grn:#2f7d4f;--bd:#e4dcc8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1a21;--fg:#e8f1f3;--mut:#9db3bb;--card:#13262f;--pri:#5fc8e0;--sand:#1d2f36;--bd:#25404b;--grn:#6fcf97}}
+:root[data-theme="dark"]{--bg:#0c1a21;--fg:#e8f1f3;--mut:#9db3bb;--card:#13262f;--pri:#5fc8e0;--sand:#1d2f36;--bd:#25404b;--grn:#6fcf97}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--card);border-bottom:1px solid var(--bd)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px}
+.logo{font:800 1.15rem Fraunces,Georgia,serif;color:var(--pri);text-decoration:none}
+nav{display:flex;gap:2px;overflow-x:auto;padding:0 8px 6px;scrollbar-width:none}
+nav a{padding:6px 11px;border-radius:99px;color:var(--fg);text-decoration:none;white-space:nowrap;font-size:.92rem}
+nav a.on{background:var(--pri);color:#fff}
+button,select,input,textarea{font:inherit;color:var(--fg)}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600}
+.btn.alt{background:var(--sand);color:var(--fg)}
+.sm{padding:5px 10px;border-radius:99px;border:1px solid var(--bd);background:var(--card);cursor:pointer}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:14px}
+.hero{background:linear-gradient(165deg,#0b5d7a 10%,#14b8a6 65%,#f1e6cf);color:#fff;border-radius:22px;padding:34px 18px 22px;margin-bottom:22px}
+.hero h1{font-size:clamp(1.9rem,6vw,3.2rem);max-width:15ch}
+.hero p{margin:8px 0 18px;max-width:46ch}
+.sf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;background:var(--card);padding:10px;border-radius:14px}
+.sf input,.sf select,.f select,.f input,.fm input,.fm select,.fm textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:9px;background:var(--bg)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.sec{margin:26px 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sec h2{font-size:1.5rem}
+.sec a{color:var(--pri)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.img{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;position:relative}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.img small{position:absolute;bottom:4px;left:8px;font-size:.68rem;color:#fff;opacity:.85}
+.t-b{background:linear-gradient(135deg,#0b5d7a,#2dd4bf)}.t-s{background:linear-gradient(135deg,#a8742f,#e7c98b)}.t-f{background:linear-gradient(135deg,#b4532a,#f0a35e)}.t-p{background:linear-gradient(135deg,#1f6b3f,#8ccf7e)}.t-e{background:linear-gradient(135deg,#4a4e9c,#86a8e7)}
+.cb{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:1.1rem}
+.mut{color:var(--mut);font-size:.88rem}
+.tg{display:flex;gap:4px;flex-wrap:wrap}
+.tg span{background:var(--sand);border-radius:99px;padding:2px 9px;font-size:.78rem}
+.cb .btn{margin-top:auto}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.fm{display:grid;gap:10px;max-width:520px}
+dialog{border:0;border-radius:18px;max-width:560px;width:calc(100% - 24px);background:var(--card);color:var(--fg);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dc{padding:18px;display:grid;gap:10px}
+.note{background:var(--sand);border-radius:10px;padding:8px 12px;font-size:.85rem}
+svg.map{width:100%;max-width:340px;background:var(--sand);border-radius:16px}
+.mapw{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.dot{cursor:pointer}
+footer{padding:24px 14px;text-align:center;color:var(--mut);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.hero{animation:f .7s ease both}@keyframes f{from{opacity:0;transform:translateY(8px)}}}
+</style>
+</head>
+<body>
+<header><div class="top"><a class="logo" href="#home">Descobre Moçambique</a><span><button class="sm" id="lg" aria-label="Idioma">EN</button> <button class="sm" id="fv" aria-label="Favoritos">♥ <b id="fc">0</b></button></span></div><nav id="nav" aria-label="Menu"></nav></header>
+<main id="m"></main>
+<footer id="ft"></footer>
+<dialog id="dg"></dialog>
+<script>
+const WA=""; // Número WhatsApp configurável, ex.: "258840000000"
+const T={pt:{
+nav:[["home","Início"],["destinos","Destinos"],["praias","Praias"],["hoteis","Hotéis"],["restaurantes","Restaurantes"],["parques","Parques e Natureza"],["experiencias","Experiências"],["roteiros","Roteiros"],["mapa","Mapa"],["ajuda","Ajuda-me a escolher"],["sobre","Sobre"],["contactos","Contactos"]],
+slogan:"O teu próximo destino está em Moçambique",h1:"Descobre a beleza de Moçambique",q:"Pesquisar destino…",anyx:"Qualquer experiência",anyb:"Qualquer orçamento",anyp:"Todas as províncias",insp:"Inspira-me",go:"Pesquisar",feat:"Em destaque",all:"Ver tudo",cheap:"Experiências económicas",none:"Sem resultados. Tenta limpar os filtros.",det:"Ver detalhes",fav:"Guardar",unfav:"Remover dos favoritos",close:"Fechar",demo:"Dados demonstrativos: confirma preços, horários, acesso e segurança antes de viajar.",cons:"Consultar o estabelecimento",bud:"Orçamento indicativo",maxm:"Máximo por dia (MZN)",nolim:"Sem limite",acts:"Actividades",contact:"Contacto e reserva",favs:"Favoritos",nofav:"Ainda não guardaste favoritos.",from:"De onde partes?",exp:"Que experiência procuras?",dur:"Duração",who:"Com quem viajas?",day:"Passeio de um dia",wk:"Fim de semana",hol:"Férias (7+ dias)",solo:"Sozinho/a",cpl:"Casal",fam:"Família",grp:"Grupo",rec:"Recomendações",sug:"Sugerir destino",send:"Enviar",name:"Nome",msg:"Mensagem",sent:"Formulário demonstrativo: ainda sem servidor. Configura WA ou um backend para receber mensagens.",
+about:"Plataforma para moçambicanos e turistas descobrirem praias, alojamentos, restaurantes, parques e roteiros. Esta é uma versão inicial com conteúdo demonstrativo, sem reservas nem pagamentos reais.",
+partners:"Parceiros: hotéis, restaurantes, guias e operadores podem divulgar serviços. Escreve-nos pelo formulário abaixo.",mapn:"Mapa esquemático. Fica preparado para integrar um serviço de mapas.",
+types:{b:"Praias",s:"Alojamentos",f:"Restaurantes",p:"Parques e natureza",e:"Experiências"},band:["Muito económico","Económico","Médio","Confortável","Luxo"],
+tags:{paradise:"Paradisíaca",family:"Familiar",romantic:"Romântica",surf:"Surf",dive:"Mergulho",calm:"Tranquilidade",budget:"Baixo orçamento",safari:"Safari",culture:"Cultura",nature:"Natureza",lodge:"Lodge",resort:"Resort",pousada:"Pousada",house:"Casa de férias",camp:"Campismo",seafood:"Marisco",trad:"Tradicional",view:"Vista para o mar",romfood:"Romântico"},
+acts:{dive:"Mergulho",surf:"Surf",swim:"Banho",dolphins:"Golfinhos",walk:"Caminhadas",boat:"Passeio de barco",birds:"Aves",safari:"Safari",culture:"Visita cultural",fish:"Pesca",camp:"Campismo",relax:"Descanso",food:"Gastronomia"}},
+en:{
+nav:[["home","Home"],["destinos","Destinations"],["praias","Beaches"],["hoteis","Hotels"],["restaurantes","Restaurants"],["parques","Parks & Nature"],["experiencias","Experiences"],["roteiros","Itineraries"],["mapa","Map"],["ajuda","Help me choose"],["sobre","About"],["contactos","Contact"]],
+slogan:"Your next destination is in Mozambique",h1:"Discover the beauty of Mozambique",q:"Search destination…",anyx:"Any experience",anyb:"Any budget",anyp:"All provinces",insp:"Inspire me",go:"Search",feat:"Featured",all:"See all",cheap:"Budget experiences",none:"No results. Try clearing the filters.",det:"View details",fav:"Save",unfav:"Remove from favourites",close:"Close",demo:"Demo data: confirm prices, opening hours, access and safety before travelling.",cons:"Check with the establishment",bud:"Indicative budget",maxm:"Max per day (MZN)",nolim:"No limit",acts:"Activities",contact:"Contact and booking",favs:"Favourites",nofav:"You have no favourites yet.",from:"Where do you start from?",exp:"What experience do you want?",dur:"Duration",who:"Who is travelling?",day:"Day trip",wk:"Weekend",hol:"Holiday (7+ days)",solo:"Solo",cpl:"Couple",fam:"Family",grp:"Group",rec:"Recommendations",sug:"Suggest a destination",send:"Send",name:"Name",msg:"Message",sent:"Demo form: no server yet. Set WA or a backend to receive messages.",
+about:"A platform for Mozambicans and visitors to discover beaches, stays, restaurants, parks and itineraries. This first version uses demo content, with no real bookings or payments.",
+partners:"Partners: hotels, restaurants, guides and operators can promote their services. Write to us using the form below.",mapn:"Schematic map. Ready for a maps service to be plugged in.",
+types:{b:"Beaches",s:"Stays",f:"Restaurants",p:"Parks & nature",e:"Experiences"},band:["Very budget","Budget","Mid-range","Comfortable","Luxury"],
+tags:{paradise:"Paradise",family:"Family",romantic:"Romantic",surf:"Surf",dive:"Diving",calm:"Quiet",budget:"Low budget",safari:"Safari",culture:"Culture",nature:"Nature",lodge:"Lodge",resort:"Resort",pousada:"Guesthouse",house:"Holiday home",camp:"Camping",seafood:"Seafood",trad:"Traditional",view:"Sea view",romfood:"Romantic"},
+acts:{dive:"Diving",surf:"Surfing",swim:"Swimming",dolphins:"Dolphins",walk:"Hiking",boat:"Boat trips",birds:"Birdwatching",safari:"Safari",culture:"Cultural visits",fish:"Fishing",camp:"Camping",relax:"Relaxing",food:"Food"}}};
+const MAXM=[1500,3000,6000,12000,1e9];
+// ===== FOTOGRAFIAS =====
+// Cola o link directo de cada foto entre as aspas, ex.: b1:["https://images.unsplash.com/...","Foto: Nome / Unsplash"]
+// Deixa "" para manter o bloco colorido. Usa só fotos com licença que permita o uso.
+const PHOTOS={
+b1:["",""],b2:["",""],b3:["",""],b4:["",""],b5:["",""],b6:["",""],
+b7:["",""],b8:["",""],b9:["",""],b10:["",""],b11:["",""],b12:["",""]
+};
+function pic(id,n){const p=PHOTOS[id];return p&&p[0]?`<img src="${p[0]}" alt="${n}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:""}
+function cred(id){const p=PHOTOS[id];return p&&p[1]?p[1]:""}
+// id,tipo,nome,província,lat,lon,orçamento(1-5),etiquetas,actividades,PT,EN
+const D=[
+["b1","b","Ponta do Ouro","Maputo",-26.84,32.89,3,"paradise,dive","dive,dolphins,swim","Mar claro, dunas e golfinhos no extremo sul.","Clear sea, dunes and dolphins in the far south."],
+["b2","b","Ponta Malongane","Maputo",-26.77,32.9,2,"calm,dive,budget","dive,camp,fish","Praia sossegada com campismo e mergulho.","Quiet beach with camping and diving."],
+["b3","b","Macaneta","Maputo",-25.48,33.13,1,"family,budget","swim,fish,relax","Praia próxima da capital, boa para um dia.","A beach close to the capital, good for a day out."],
+["b4","b","Bilene","Gaza",-25.29,33.22,2,"family,calm","swim,relax,boat","Lagoa de águas calmas, adequada a famílias.","A calm lagoon, well suited to families."],
+["b5","b","Xai-Xai","Gaza",-25.05,33.65,2,"family,surf","swim,surf,fish","Longa praia de areia na costa de Gaza.","A long sandy beach on the Gaza coast."],
+["b6","b","Tofo","Inhambane",-23.85,35.55,2,"surf,dive,budget","dive,surf,boat","Mergulho, surf e vida de praia descontraída.","Diving, surfing and a relaxed beach scene."],
+["b7","b","Vilankulo","Inhambane",-22,35.31,3,"romantic,paradise","boat,swim,relax","Porta de entrada para o arquipélago de Bazaruto.","Gateway to the Bazaruto archipelago."],
+["b8","b","Bazaruto","Inhambane",-21.65,35.47,5,"paradise,romantic,dive","dive,boat,swim","Ilhas e recifes num parque marinho.","Islands and reefs in a marine park."],
+["b9","b","Pomene","Inhambane",-22.96,35.55,3,"calm,romantic","fish,relax,boat","Baía isolada e tranquila.","A remote, peaceful bay."],
+["b10","b","Zalala","Zambézia",-17.82,36.95,2,"calm,budget,family","swim,relax","Praia extensa perto de Quelimane.","A broad beach near Quelimane."],
+["b11","b","Chocas","Nampula",-14.85,40.75,2,"calm,family","swim,relax,fish","Praia de acesso fácil a partir da Ilha de Moçambique.","A beach within easy reach of Ilha de Moçambique."],
+["b12","b","Wimbe","Cabo Delgado",-12.97,40.53,3,"family,calm,dive","swim,dive,food","Praia urbana de Pemba, com restaurantes por perto.","Pemba's town beach, with restaurants nearby."],
+["s1","s","Lodges e campismo em Tofo","Inhambane",-23.85,35.55,2,"lodge,camp,budget","camp,relax","Tipo de alojamento de exemplo. Sem estabelecimento confirmado.","Example stay type. No confirmed venue."],
+["s2","s","Resorts em Vilankulo","Inhambane",-22,35.31,5,"resort,romantic","relax,boat","Tipo de alojamento de exemplo. Sem estabelecimento confirmado.","Example stay type. No confirmed venue."],
+["s3","s","Pousadas em Bilene","Gaza",-25.29,33.22,2,"pousada,family","relax,swim","Tipo de alojamento de exemplo. Sem estabelecimento confirmado.","Example stay type. No confirmed venue."],
+["s4","s","Casas de férias em Ponta do Ouro","Maputo",-26.84,32.89,3,"house,family","relax,dive","Tipo de alojamento de exemplo. Sem estabelecimento confirmado.","Example stay type. No confirmed venue."],
+["s5","s","Hotéis em Pemba","Cabo Delgado",-12.97,40.53,3,"resort,family","relax,food","Tipo de alojamento de exemplo. Sem estabelecimento confirmado.","Example stay type. No confirmed venue."],
+["f1","f","Marisco à beira-mar","Maputo",-25.97,32.58,3,"seafood,view","food","Categoria de exemplo. Consulta cada restaurante para horário e preços.","Example category. Check each restaurant for hours and prices."],
+["f2","f","Matapa","Todo o país",-17.8,35,1,"trad,budget","food","Folhas de mandioca com amendoim e coco, prato tradicional.","Cassava leaves with peanut and coconut, a traditional dish."],
+["f3","f","Caril de camarão","Costa",-23.85,35.4,3,"seafood,trad","food","Camarão em molho de coco e especiarias.","Prawns in a coconut and spice sauce."],
+["f4","f","Peixe grelhado","Costa",-25.05,33.65,2,"seafood,budget,view","food","Peixe fresco grelhado, comum junto às praias.","Fresh grilled fish, common by the beaches."],
+["f5","f","Xima e cozinha tradicional","Todo o país",-19,33.5,1,"trad,budget,family","food","Papa de milho servida com caril ou peixe.","Maize porridge served with curry or fish."],
+["p1","p","Parque Nacional da Gorongosa","Sofala",-18.8,34.4,4,"safari,nature","safari,birds,walk","Um dos parques mais conhecidos do país.","One of the country's best-known parks."],
+["p2","p","Parque Nacional de Maputo","Maputo",-26.5,32.85,3,"safari,nature,family","safari,birds,boat","Reserva junto ao mar, a sul de Maputo.","A coastal reserve south of Maputo."],
+["p3","p","Parque Nacional do Limpopo","Gaza",-23.4,32,3,"safari,nature","safari,birds","Parte do Parque Transfronteiriço Great Limpopo.","Part of the Great Limpopo Transfrontier Park."],
+["p4","p","Reserva do Niassa","Niassa",-12,37.5,4,"safari,nature","safari,birds","Vasta reserva no norte, de acesso exigente.","A vast reserve in the north, demanding to reach."],
+["p5","p","Zinave","Inhambane",-21.5,33.5,3,"safari,nature,calm","safari,birds","Parque em recuperação, no interior.","A park in recovery, inland."],
+["p6","p","Lago Niassa","Niassa",-12,34.6,2,"calm,nature,budget","swim,boat,relax","Grande lago de água doce.","A great freshwater lake."],
+["p7","p","Cahora Bassa","Tete",-15.6,32.7,3,"nature,calm","boat,fish,walk","Albufeira e barragem no rio Zambeze.","Reservoir and dam on the Zambezi."],
+["p8","p","Chimanimani","Manica",-19.8,33,3,"nature,walk","walk,birds,camp","Montanhas para caminhadas.","Mountains for hiking."],
+["p9","p","Ilha de Moçambique","Nampula",-15.03,40.73,2,"culture,romantic","culture,walk,boat","Património Mundial, cidade histórica numa ilha.","A World Heritage historic town on an island."],
+["e1","e","Mergulho com tubarões-baleia e raias","Inhambane",-23.85,35.55,3,"dive,nature","dive,boat","Saídas de barco a partir de Tofo, sujeitas a época e condições.","Boat trips from Tofo, subject to season and conditions."],
+["e2","e","Passeio de dhow em Bazaruto","Inhambane",-21.65,35.47,4,"romantic,paradise","boat,swim","Passeios em barco tradicional. Confirma operador e preço.","Traditional boat trips. Confirm operator and price."],
+["e3","e","Passeio a pé em Maputo","Maputo",-25.97,32.58,1,"culture,budget","walk,culture","Centro histórico, mercados e miradouros.","Historic centre, markets and viewpoints."],
+["e4","e","Caminhada no Chimanimani","Manica",-19.8,33,2,"nature,budget","walk,camp","Trilhos de montanha, melhor com guia local.","Mountain trails, best with a local guide."]];
+const R=[["r1",{pt:"Fim de semana a sul",en:"Southern weekend"},"Maputo → Macaneta → Bilene",["b3","b4","f4"],"wk"],["r2",{pt:"Costa de Inhambane",en:"Inhambane coast"},"Tofo → Vilankulo → Bazaruto",["b6","b7","b8","e1"],"hol"],["r3",{pt:"Norte histórico",en:"Historic north"},"Ilha de Moçambique → Chocas → Pemba",["p9","b11","b12"],"hol"],["r4",{pt:"Safari e natureza",en:"Safari and nature"},"Gorongosa → Chimanimani",["p1","p8"],"hol"]];
+const PC={Maputo:[-25.9,32.6],Gaza:[-24,33.5],Inhambane:[-23.9,35.3],Sofala:[-19.8,34.8],Zambézia:[-17.9,36.9],Nampula:[-15.1,39.3],"Cabo Delgado":[-12.97,40.5],Niassa:[-13.3,36.5],Tete:[-16.2,33.6],Manica:[-19.1,33.5]};
+const PR=Object.keys(PC);
+const IC={b:"🏖️",s:"🛏️",f:"🍤",p:"🦁",e:"🤿"},COL={b:"#0b8fb0",s:"#c28a35",f:"#d0662f",p:"#2f7d4f",e:"#5a62c8"};
+let lang="pt",F={q:"",prov:"",tag:"",max:4},favs=[];
+try{favs=JSON.parse(localStorage.getItem("dm_fav")||"[]")}catch(e){}
+try{lang=localStorage.getItem("dm_lang")||(navigator.language||"").startsWith("en")?"en":"pt"}catch(e){}
+const $=s=>document.querySelector(s),t=()=>T[lang],it=i=>lang==="pt"?i[9]:i[10],find=id=>D.find(d=>d[0]===id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tg=s=>s.split(",").map(x=>`<span>${t().tags[x]||x}</span>`).join("");
+function card(i){const[id,ty,n,pv]=i;return `<article class="card"><div class="img t-${ty}" ${pic(id,n)?"":'aria-hidden="true"'}>${IC[ty]}${pic(id,n)}<small>${cred(id)||(pic(id,n)?"":lang==="pt"?"Imagem ilustrativa":"Illustrative image")}</small></div><div class="cb"><h3>${n}</h3><div class="mut">${pv} · ${t().band[i[6]-1]}</div><div class="tg">${tg(i[7])}</div><p class="mut" style="margin:0">${it(i)}</p><button class="btn" data-d="${id}">${t().det}</button></div></article>`}
+function filt(ty){const q=F.q.toLowerCase();return D.filter(i=>(!ty||i[1]===ty)&&(!q||(i[2]+i[3]+i[9]+i[10]).toLowerCase().includes(q))&&(!F.prov||i[3]===F.prov)&&(!F.tag||i[7].split(",").includes(F.tag))&&i[6]<=F.max)}
+function filters(){const L=t();return `<div class="f row"><input id="fq" type="search" placeholder="${L.q}" value="${esc(F.q)}" aria-label="${L.q}"><select id="fp"><option value="">${L.anyp}</option>${PR.map(p=>`<option ${F.prov===p?"selected":""}>${p}</option>`).join("")}</select><select id="ft2"><option value="">${L.anyx}</option>${Object.keys(L.tags).map(k=>`<option value="${k}" ${F.tag===k?"selected":""}>${L.tags[k]}</option>`).join("")}</select><select id="fb" aria-label="${L.maxm}">${MAXM.map((v,i)=>`<option value="${i}" ${F.max===i+1||(F.max===5&&i===4)?"selected":""}>${i<4?"≤ "+v.toLocaleString("pt-PT")+" MZN":L.nolim}</option>`).join("")}</select></div>`}
+function list(ty,title){const r=filt(ty);return `<div class="sec"><h2>${title}</h2></div>${filters()}<p class="mut">${r.length}</p><div class="grid">${r.map(card).join("")||`<p>${t().none}</p>`}</div>`}
+function row(ty,h,r){const L=t(),a=r||D.filter(i=>i[1]===ty).slice(0,3);return `<div class="sec"><h2>${h}</h2>${ty?`<a href="#${r?"destinos":{b:"praias",s:"hoteis",f:"restaurantes",p:"parques",e:"experiencias"}[ty]}">${L.all}</a>`:""}</div><div class="grid">${a.map(card).join("")}</div>`}
+function dist(a,b,c,d){const r=x=>x*Math.PI/180,k=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return 12742*Math.asin(Math.sqrt(k))}
+function mapView(){const L=t(),pv=F.prov;const P=D.filter(i=>!pv||i[3]===pv);const pts=P.map(i=>`<circle class="dot" data-d="${i[0]}" cx="${((i[5]-30)*27.3).toFixed(0)}" cy="${((-i[4]-10)*32.5).toFixed(0)}" r="7" fill="${COL[i[1]]}" stroke="#fff" stroke-width="2"><title>${i[2]}</title></circle>`).join("");
+return `<div class="sec"><h2>${L.nav[8][1]}</h2></div><p class="mut">${L.mapn}</p><div class="row"><select id="mp"><option value="">${L.anyp}</option>${PR.map(p=>`<option ${pv===p?"selected":""}>${p}</option>`).join("")}</select></div><div class="mapw"><svg class="map" viewBox="0 0 300 560" role="img" aria-label="Mapa"><polygon points="${[[40.4,-10.6],[40.6,-14],[39.5,-16.3],[37,-18],[35,-20.5],[35.4,-22.5],[35.5,-24],[33.8,-25.8],[32.9,-26.9],[32.4,-26.9],[32,-26],[31.9,-23],[31.3,-22.4],[32.4,-21.3],[33,-19.8],[32.7,-19],[32.9,-17],[31.2,-16],[30.2,-15.6],[32.7,-16.5],[33,-14],[34.8,-14.3],[34.5,-11.6],[36.5,-11.7]].map(p=>((p[0]-30)*27.3).toFixed(0)+","+((-p[1]-10)*32.5).toFixed(0)).join(" ")}" fill="var(--card)" stroke="var(--pri)" stroke-width="2"/>${pts}</svg><div>${Object.keys(IC).map(k=>`<div><span style="color:${COL[k]}">●</span> ${IC[k]} ${L.types[k]}</div>`).join("")}</div></div>`}
+function assist(){const L=t();return `<div class="sec"><h2>${L.nav[9][1]}</h2></div><form class="fm" id="as"><label>${L.from}<select name="o">${PR.map(p=>`<option>${p}</option>`).join("")}</select></label><label>${L.exp}<select name="x">${["paradise","family","romantic","surf","dive","calm","safari","culture","nature","budget"].map(k=>`<option value="${k}">${L.tags[k]}</option>`).join("")}</select></label><label>${L.bud}<select name="b">${MAXM.map((v,i)=>`<option value="${i+1}" ${i===2?"selected":""}>${L.band[i]}</option>`).join("")}</select></label><label>${L.dur}<select name="d"><option value="day">${L.day}</option><option value="wk">${L.wk}</option><option value="hol">${L.hol}</option></select></label><label>${L.who}<select name="w"><option>${L.solo}</option><option>${L.cpl}</option><option value="fam">${L.fam}</option><option>${L.grp}</option></select></label><button class="btn">${L.rec}</button></form><div id="ar"></div>`}
+function recs(f){const o=PC[f.o.value],x=f.x.value,b=+f.b.value,d=f.d.value,w=f.w.value;const lim={day:300,wk:900,hol:9e3}[d];
+return D.filter(i=>i[1]!=="f").map(i=>{const k=dist(o[0],o[1],i[4],i[5]);let s=0;if(i[7].split(",").includes(x))s+=4;if(i[6]<=b)s+=2;if(k<=lim)s+=3;else s-=3;if(w==="fam"&&i[7].includes("family"))s+=2;if(w==="Casal"&&i[7].includes("romantic")||w==="Couple"&&i[7].includes("romantic"))s+=2;return[s-k/2000,i]}).sort((a,c)=>c[0]-a[0]).slice(0,5).map(a=>a[1])}
+function show(id){const i=find(id),L=t(),on=favs.includes(id);$("#dg").innerHTML=`<div class="dc">${pic(i[0],i[2])?`<div class="img t-${i[1]}" style="height:200px">${pic(i[0],i[2])}<small>${cred(i[0])}</small></div>`:""}<h2>${IC[i[1]]} ${i[2]}</h2><div class="mut">${i[3]} · ${L.types[i[1]]}</div><div class="tg">${tg(i[7])}</div><p>${it(i)}</p><div><b>${L.acts}:</b> ${i[8].split(",").map(a=>L.acts[a]).join(", ")}</div><div><b>${L.bud}:</b> ${L.band[i[6]-1]}</div><div><b>${L.contact}:</b> ${L.cons}</div><div class="note">${L.demo}</div><div class="row"><button class="btn" id="df">${on?L.unfav:"♥ "+L.fav}</button><button class="btn alt" id="dx">${L.close}</button></div></div>`;
+$("#dg").showModal();$("#dx").onclick=()=>$("#dg").close();$("#df").onclick=()=>{favs=on?favs.filter(x=>x!==id):[...favs,id];try{localStorage.setItem("dm_fav",JSON.stringify(favs))}catch(e){}$("#dg").close();render()}}
+function contact(){const L=t();return `<div class="sec"><h2>${L.nav[11][1]}</h2></div><p>${L.partners}</p><form class="fm" id="cf"><input required placeholder="${L.name}" aria-label="${L.name}"><input type="email" required placeholder="Email" aria-label="Email"><select><option>${L.sug}</option><option>${L.nav[11][1]}</option><option>${lang==="pt"?"Quero divulgar o meu serviço":"I want to promote my service"}</option></select><textarea rows="4" required placeholder="${L.msg}" aria-label="${L.msg}"></textarea><button class="btn">${L.send}</button></form><p id="cm" class="note" hidden></p>${WA?`<p><a class="btn" href="https://wa.me/${WA}">WhatsApp</a></p>`:`<p class="mut">WhatsApp: ${lang==="pt"?"define o número na constante WA":"set the number in the WA constant"}</p>`}`}
+function render(){const L=t(),h=(location.hash||"#home").slice(1),L2=L.nav;document.documentElement.lang=lang;document.title="Descobre Moçambique · "+L.slogan;$("#lg").textContent=lang==="pt"?"EN":"PT";$("#fc").textContent=favs.length;
+$("#nav").innerHTML=L2.map(n=>`<a href="#${n[0]}" class="${n[0]===h?"on":""}">${n[1]}</a>`).join("");$("#ft").textContent="© Descobre Moçambique · "+L.demo;
+let v="";if(h==="home")v=`<section class="hero"><h1>${L.h1}</h1><p>${L.slogan}</p><form class="sf" id="hs"><input name="q" placeholder="${L.q}" aria-label="${L.q}"><select name="x"><option value="">${L.anyx}</option>${Object.keys(L.tags).slice(0,10).map(k=>`<option value="${k}">${L.tags[k]}</option>`).join("")}</select><select name="b">${MAXM.map((v,i)=>`<option value="${i+1}" ${i===4?"selected":""}>${i<4?"≤ "+v.toLocaleString("pt-PT")+" MZN":L.anyb}</option>`).join("")}</select><button class="btn">${L.go}</button></form><div class="row"><button class="btn alt" id="ins">✨ ${L.insp}</button></div></section>`+row("b",L.types.b)+row("s",L.types.s)+row("f",L.types.f)+row("p",L.types.p)+row("e",L.cheap,D.filter(i=>i[6]<=2).slice(0,6));
+else if(h==="destinos")v=list("",L.nav[1][1]);else if(h==="praias")v=list("b",L.types.b);else if(h==="hoteis")v=list("s",L.types.s);else if(h==="restaurantes")v=list("f",L.types.f);else if(h==="parques")v=list("p",L.types.p);else if(h==="experiencias")v=list("e",L.types.e);
+else if(h==="roteiros")v=`<div class="sec"><h2>${L.nav[7][1]}</h2></div>`+R.map(r=>`<div class="sec"><h3>${r[1][lang]}</h3><span class="mut">${r[2]} · ${L[r[4]]}</span></div><div class="grid">${r[3].map(x=>card(find(x))).join("")}</div>`).join("");
+else if(h==="mapa")v=mapView();else if(h==="ajuda")v=assist();else if(h==="favoritos")v=`<div class="sec"><h2>♥ ${L.favs}</h2></div><div class="grid">${favs.map(x=>card(find(x))).join("")||`<p>${L.nofav}</p>`}</div>`;
+else if(h==="sobre")v=`<div class="sec"><h2>${L2[10][1]}</h2></div><p style="max-width:60ch">${L.about}</p>`;else if(h==="contactos")v=contact();
+$("#m").innerHTML=v;bind()}
+function bind(){const g=(s,f)=>{const e=$(s);if(e)e.onchange=f};
+const fq=$("#fq");if(fq)fq.oninput=e=>{F.q=e.target.value;clearTimeout(window._t);window._t=setTimeout(()=>{render();const x=$("#fq");x.focus();x.setSelectionRange(99,99)},250)};
+g("#fp",e=>{F.prov=e.target.value;render()});g("#ft2",e=>{F.tag=e.target.value;render()});g("#fb",e=>{F.max=+e.target.value+1;render()});g("#mp",e=>{F.prov=e.target.value;render()});
+const hs=$("#hs");if(hs)hs.onsubmit=e=>{e.preventDefault();F={q:hs.q.value,prov:"",tag:hs.x.value,max:+hs.b.value};location.hash="destinos"};
+const ins=$("#ins");if(ins)ins.onclick=()=>show(D[Math.floor(Math.random()*D.length)][0]);
+const as=$("#as");if(as)as.onsubmit=e=>{e.preventDefault();$("#ar").innerHTML=`<div class="sec"><h2>${t().rec}</h2></div><div class="grid">${recs(as).map(card).join("")}</div>`;$("#ar").scrollIntoView({behavior:"smooth"})};
+const cf=$("#cf");if(cf)cf.onsubmit=e=>{e.preventDefault();const c=$("#cm");c.hidden=false;c.textContent=t().sent}}
+document.addEventListener("click",e=>{const d=e.target.closest("[data-d]");if(d)show(d.dataset.d)});
+$("#lg").onclick=()=>{lang=lang==="pt"?"en":"pt";try{localStorage.setItem("dm_lang",lang)}catch(e){}render()};
+$("#fv").onclick=()=>{location.hash="favoritos"};
+addEventListener("hashchange",()=>{render();scrollTo(0,0)});
+render();
+</script>
+</body>
+</html>
